@@ -519,6 +519,7 @@ pre {
 
 /* Main Share Button Style */
 .fab-main {
+  right: 20px;
   width: 64px;
   height: 64px;
   background: linear-gradient(135deg, #ff6f00 0%, #1e3c72 100%);
