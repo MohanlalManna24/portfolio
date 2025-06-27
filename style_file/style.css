@@ -1611,3 +1611,154 @@ h3 {
     display: block;
   }
 }
+/* Contact section responsive styles for tab and mobile only */
+@media (max-width: 900px) {
+  #contact {
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+    padding: 24px 4vw 24px 4vw;
+    gap: 0;
+  }
+  #contact .contact-left,
+  #contact .contact-right {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    margin: 0 0 18px 0;
+    padding: 24px 0 18px 0;
+    box-sizing: border-box;
+  }
+  #contact .contact-left {
+    padding-top: 32px;
+    padding-bottom: 18px;
+    border-radius: 14px 14px 0 0;
+  }
+  #contact .contact-left h1 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+  }
+  #contact .contact-left p {
+    font-size: 1rem;
+    margin-bottom: 18px;
+    padding: 0 2vw;
+    line-height: 1.5;
+  }
+  #contact .contact-left button {
+    margin-top: 20px;
+    font-size: 1rem;
+    padding: 10px 18px;
+  }
+  #contact .contact-left .qrcode {
+    width: 90vw;
+    max-width: 260px;
+    height: auto;
+    margin: 18px auto 0 auto;
+    border-radius: 10px;
+  }
+  #contact .contact-left .qrcode img {
+    width: 100%;
+    height: auto;
+  }
+  #contact .contact-right {
+    padding: 18px 0 0 0;
+    border-radius: 0 0 14px 14px;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  }
+  #contact .contact-right h2 {
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: #81274b;
+  }
+  #contact .contact-right img {
+    width: 90px;
+    position: static;
+    display: block;
+    margin: 0 auto 10px auto;
+    opacity: 0.18;
+  }
+  #contact .contact-right form {
+    margin-left: 0;
+    width: 100%;
+    padding: 0 2vw;
+    gap: 8px;
+  }
+  #contact .contact-right form label {
+    font-size: 1rem;
+    margin-bottom: 2px;
+  }
+  #contact .contact-right form input,
+  #contact .contact-right form textarea {
+    width: 100%;
+    font-size: 1rem;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  #contact .contact-right form button {
+    width: 100%;
+    margin-left: 0;
+    font-size: 1rem;
+    padding: 10px 0;
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  #contact {
+    padding: 10px 2vw 10px 2vw;
+  }
+  #contact .contact-left,
+  #contact .contact-right {
+    padding: 14px 0 10px 0;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+  #contact .contact-left h1 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  #contact .contact-left p {
+    font-size: 0.98rem;
+    padding: 0 2vw;
+  }
+  #contact .contact-left .qrcode {
+    max-width: 200px;
+    margin: 12px auto 0 auto;
+  }
+  #contact .contact-right h2 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  #contact .contact-right img {
+    width: 60px;
+    margin-bottom: 6px;
+  }
+  #contact .contact-right form label {
+    font-size: 0.98rem;
+  }
+  #contact .contact-right form input,
+  #contact .contact-right form textarea {
+    font-size: 0.97rem;
+    padding: 7px;
+    margin-bottom: 8px;
+  }
+  #contact .contact-right form button {
+    font-size: 0.98rem;
+    padding: 9px 0;
+    margin-top: 6px;
+  }
+}
+/* Mobile: marquee-box box2 এর পর contact section-এর উপরে gap */
+@media (max-width: 600px) {
+  .box2 {
+    margin-bottom: 100px;
+  }
+  #contact {
+    margin-top: 0;
+    padding-top: 18px;
+  }
+}
