@@ -347,6 +347,20 @@ nav::before {
   }
 }
 
+/* Remove profile image ring (conic-gradient) on mobile/tab */
+@media (max-width: 900px) {
+  #mohan_img::before {
+    display: none !important;
+    content: none !important;
+  }
+}
+@media (max-width: 700px) {
+  #mohan_img::before {
+    display: none !important;
+    content: none !important;
+  }
+}
+
 /* ========== Hero Section Text Styles ========== */
 .text {
   position: relative;
@@ -373,12 +387,24 @@ nav::before {
   animation: ring 5s linear infinite;
   filter: hue-rotate(0deg);
 }
-/* Animated color ring effect for name */
-@keyframes ring {
-  100% {
-    filter: hue-rotate(360deg);
+
+/* Responsive font size for .mohan_name */
+@media (max-width: 1100px) {
+  .text .name-text .mohan_name {
+    font-size: 36px;
   }
 }
+@media (max-width: 900px) {
+  .text .name-text .mohan_name {
+    font-size: 28px;
+  }
+}
+@media (max-width: 700px) {
+  .text .name-text .mohan_name {
+    font-size: 18px;
+  }
+}
+
 .animated-text #typing-effect {
   font-size: 35px;
   font-weight: bold;
@@ -437,9 +463,11 @@ pre {
   flex-direction: row;
   align-items: center;
   gap: 20px;
-  margin-left: 250px;
+  margin-left: 0;         /* Remove left margin */
+  margin-right: 0;
   margin-top: 20px;
   margin-bottom: 20px;
+  justify-content: center; /* Center horizontally */
 }
 .btn button {
   padding: 10px 20px;
@@ -1275,4 +1303,103 @@ h3 {
   position: relative;
   top: 20px;
   left: calc(50% + 250px);
+}
+/*=========== ============ ========== ========== Home page styles responsive =========== ============ ============= ============== */
+/* Responsive styles for #home section */
+@media (max-width: 1100px) {
+  #home {
+    min-height: 80vh;
+    padding-bottom: 40px;
+  }
+  #mohan_img {
+    position: static;
+    margin: 30px auto 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+  #mohan_img img {
+    width: 220px;
+  }
+  .bgLogo {
+    width: 350px;
+    top: 20px;
+  }
+  .text {
+    top: 60px;
+    font-size: 18px;
+  }
+  .text .hi {
+    font-size: 40px;
+    margin-left: 40px;
+  }
+  .text .name-text {
+    margin-left: 80px;
+    font-size: 28px;
+  }
+  .text .name-text .mohan_name {
+    font-size: 36px;
+  }
+  .animated-text #typing-effect {
+    font-size: 22px;
+    margin-left: 30px;
+  }
+  .text p,
+  pre {
+    margin-left: 20px;
+    font-size: 16px;
+  }
+  .btn {
+    margin-left: 0;
+    gap: 14px;
+    justify-content: center;
+  }
+  .wrapper {
+    margin-left: 80px;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 900px) {
+  #home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 80vh;
+    padding-bottom: 40px;
+  }
+  #mohan_img {
+    order: 1;
+    position: static;
+    margin: 30px auto 0 auto;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .text {
+    order: 2;
+    width: 100%;
+    top: 0;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+}
+
+/* For extra small screens */
+@media (max-width: 700px) {
+  #home {
+    min-height: 70vh;
+    padding-bottom: 30px;
+  }
+  #mohan_img img {
+    width: 120px;
+  }
+  .bgLogo {
+    width: 120px;
+    top: 20px;
+  }
+  .text {
+    font-size: 10px;
+    margin-top: 8px;
+  }
 }
