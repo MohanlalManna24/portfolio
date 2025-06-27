@@ -31,6 +31,12 @@
                     <span class="port-white">Port</span><span class="folio-green">folio</span>
                 </b>
             </div>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
             <div class="nav-menu">
                 <a href="#home"><img src="./images/home-button.png" alt="Home"> Home</a>
                 <a href="#about"><img src="./images/user.png" alt="About"> About</a>
@@ -390,7 +396,41 @@
                 </form>
             </div>
         </section>
+        <!-- ...existing code... -->
+
+<!-- Portfolio QR Code Section: Footer-এর ঠিক আগে বসান -->
+<section id="portfolio-qr" style="text-align:center; margin: 40px 0;">
+    <h2 style="margin-bottom:16px;">Scan to Visit My Portfolio</h2>
+    <button id="showQRBtn" style="padding:10px 24px; border-radius:6px; background:#1e3c72; color:#fff; border:none; font-size:1em; cursor:pointer;">Show QR Code</button>
+    <div id="qrcode" style="display:none; margin-top:20px;"></div>
+    <p style="margin-top:10px; color:#555;">Open this portfolio on your mobile by scanning the QR code.</p>
+</section>
+
+<!-- QRCode.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+  // আপনার live portfolio URL দিন
+  var portfolioLink = "https://yourdomain.com"; // <-- এখানে আপনার live URL দিন
+
+  document.getElementById('showQRBtn').onclick = function() {
+    var qrDiv = document.getElementById("qrcode");
+    if (qrDiv.innerHTML.trim() === "") {
+      new QRCode(qrDiv, {
+        text: portfolioLink,
+        width: 140,
+        height: 140,
+        colorDark : "#1e3c72",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+      });
+    }
+    qrDiv.style.display = "inline-block";
+    this.style.display = "none";
+  };
+</script>
+<!-- ...existing code... -->
     </main>
+    
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-part1">
@@ -447,6 +487,7 @@
             scale: 1.06,
         }); -->
     </script>
+    
 </body>
 
 </html>

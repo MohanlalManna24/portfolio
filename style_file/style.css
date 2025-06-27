@@ -103,7 +103,99 @@ nav::before {
   border-bottom: 1.5px solid rgba(255, 255, 255, 0.08);
   position: relative;
 }
+/* ...existing code... */
 
+/* Hamburger menu styles */
+.nav-toggle-label {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  margin-left: 20px;
+  z-index: 1100;
+}
+.nav-toggle-label span {
+  display: block;
+  height: 4px;
+  width: 28px;
+  background: #fff;
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Responsive Navigation */
+@media (max-width: 900px) {
+  .nav-container {
+    padding: 0 10px;
+  }
+  .nav-menu {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100vw;
+    background: rgba(20, 30, 48, 0.98);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s;
+    z-index: 1001;
+  }
+  .nav-menu a {
+    width: 100%;
+    padding: 18px 30px;
+    font-size: 22px;
+    border-radius: 0;
+    border-bottom: 1px solid #2228;
+    background: none;
+    box-shadow: none;
+    justify-content: flex-start;
+  }
+  .nav-toggle-label {
+    display: flex;
+  }
+  .nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+  .nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+  .nav-toggle:checked ~ .nav-menu {
+    height: 270px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    overflow: visible;
+  }
+  .nav-left {
+    gap: 10px;
+  }
+}
+
+/* Extra small screens (mobile) */
+@media (max-width: 600px) {
+  .nav-container {
+    padding: 0 4px;
+  }
+  .nav-logo {
+    width: 38px;
+  }
+  .portfolio {
+    font-size: 22px;
+  }
+  .nav-menu a {
+    font-size: 18px;
+    padding: 14px 18px;
+  }
+}
+
+/* ...existing code... */
 /* ========== Portfolio Title & Color Variants ========== */
 .nav-left {
   display: flex;
@@ -150,7 +242,6 @@ nav::before {
   transition: background 0.3s cubic-bezier(0.4, 2, 0.6, 1), color 0.3s,
     transform 0.2s;
   position: relative;
-  overflow: hidden;
 }
 
 .nav-menu a:hover,
