@@ -720,12 +720,33 @@ body #about {
   /* filter: blur(3px); */
   transform: scale(0.9);
   opacity: 0.5;
-
 }
 .right-container .about-me .moving .box span {
   color: #000;
   font-size: 30px;
   font-weight: bolder;
+}
+/*=========== ============ ========== ========== marquee effect  =========== ============ ============= ============== */
+.marquee-box {
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+  background: #51a904;
+  box-shadow: inset -1px -8px 14px 0px rgba(37, 44, 119, 0.18),
+    0 2px 8px #0d0728;
+}
+.sub-marquee-box {
+  margin: auto;
+  width: 80%;
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, #499804, #7ff710, #499804);
+}
+.sub-marquee-box p {
+  padding: 10px;
+  font-size: x-large;
 }
 /*=========== ============ ========== ========== Skile page styles =========== ============ ============= ============== */
 #skill {
@@ -862,7 +883,7 @@ body #about {
   background: linear-gradient(90deg, #cdffd8, #94b9ff);
   box-shadow: 2px 5px 5px black;
   height: 500px;
-  margin: 40px 20px 0px 20px;
+  margin: 40px 20px 50px 20px;
   position: relative;
 }
 .project-container .box-border {
@@ -931,6 +952,13 @@ body #about {
 .all-project .box.visible {
   opacity: 1;
   transform: rotateY(0deg);
+}
+/*=========== ============ ========== ========== marquee effect  =========== ============ ============= ============== */
+.box2 {
+  background: #0072ff;
+}
+.sub-box2 {
+  background: linear-gradient(130deg, blue, lightblue, blue);
 }
 /*=========== ============ ========== ========== Contact page styles =========== ============ ============= ============== */
 body #contact {
