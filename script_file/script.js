@@ -75,19 +75,6 @@ fabMain.addEventListener("click", () => {
     fabActions.style.transform = "translateX(70px) scale(1)";
   }, 5000); // 5 seconds
 });
-
-// যদি section এর ভিতরে কিছু না থাকে
-window.addEventListener("DOMContentLoaded", () => {
-  const sections = document.querySelectorAll("section");
-
-  sections.forEach((section) => {
-    if (section.innerHTML.trim() === "") {
-      section.style.backgroundColor = "white";
-      section.style.minHeight = "100vh";
-    }
-  });
-});
-
 //===========skill card animation============
 document.querySelectorAll(".skill-card").forEach((card, i) => {
   setTimeout(() => {
@@ -131,19 +118,49 @@ form.addEventListener("submit", function (e) {
 });
 
 //scroll animation
-    const boxes = document.querySelectorAll('.box');
+const boxes = document.querySelectorAll(".box");
 
-    function checkBoxes() {
-      const triggerBottom = window.innerHeight * 0.85;
-      boxes.forEach(box => {
-        const boxTop = box.getBoundingClientRect().top;
-        if (boxTop < triggerBottom) {
-          box.classList.add('visible');
-        } else {
-          box.classList.remove('visible');
-        }
-      });
+function checkBoxes() {
+  const triggerBottom = window.innerHeight * 0.85;
+  boxes.forEach((box) => {
+    const boxTop = box.getBoundingClientRect().top;
+    if (boxTop < triggerBottom) {
+      box.classList.add("visible");
+    } else {
+      box.classList.remove("visible");
     }
+  });
+}
 
-    window.addEventListener('scroll', checkBoxes);
-    window.addEventListener('load', checkBoxes);
+window.addEventListener("scroll", checkBoxes);
+window.addEventListener("load", checkBoxes);
+
+//whatsApp Massage
+const contact_headings = document.querySelectorAll(".heading");
+const QRs = document.querySelectorAll(".qrcode");
+const whatsApp = document.getElementById("whatsApp");
+
+whatsApp.addEventListener("click", () => {
+  contact_headings.forEach((h) => {
+    h.style.opacity = "0";
+  });
+  QRs.forEach((q) => {
+    q.style.display = "block";
+    setTimeout(() => {
+      q.classList.add("visible");
+    }, 10);
+  });
+
+  // 10 second later, reset everything
+  setTimeout(() => {
+    contact_headings.forEach((h) => {
+      h.style.opacity = "1";
+    });
+    QRs.forEach((q) => {
+      q.classList.remove("visible");
+      setTimeout(() => {
+        q.style.display = "none";
+      }, 500); // wait for fade-out transition
+    });
+  }, 10000); // 10 seconds
+});
