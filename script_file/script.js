@@ -164,3 +164,11 @@ whatsApp.addEventListener("click", () => {
     });
   }, 10000); // 10 seconds
 });
+
+// Close nav-menu on link click (for mobile)
+document.querySelectorAll('.nav-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    const navToggle = document.getElementById('nav-toggle');
+    if (navToggle && navToggle.checked) navToggle.checked = false;
+  });
+});

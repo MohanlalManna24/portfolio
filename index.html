@@ -31,6 +31,13 @@
                     <span class="port-white">Port</span><span class="folio-green">folio</span>
                 </b>
             </div>
+            <!-- Hamburger Toggle Checkbox -->
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
             <div class="nav-menu">
                 <a href="#home"><img src="./images/home-button.png" alt="Home"> Home</a>
                 <a href="#about"><img src="./images/user.png" alt="About"> About</a>
@@ -89,7 +96,7 @@
                 <div class="share-fab">
                     <button class="fab-main" id="fabMain"><i class="fa fa-share-alt"></i></button>
                     <div class="fab-actions" id="fabActions">
-                        <a href="https://wa.me/?text=Check%20out%20my%20portfolio!%20[YOUR_LINK_HERE]" target="_blank"
+                        <a href="https://wa.me/?text=Check%20out%20my%20portfolio!%20[https://mohanlalmanna24.github.io/portfolio/]" target="_blank"
                             title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                         <button class="copy-link" title="Copy Link"><i class="fas fa-link"></i></button>
                     </div>
@@ -117,7 +124,7 @@
                             only crafting
                             responsive and interactive user interfaces, but also solving real-world problems through
                             logical thinking.
-                            <br>
+                            <br><br>
                             I'm skilled in tools like Photoshop for UI/UX design and MS Excel for data handling and
                             automation. I love blending creativity with code to build clean, user-friendly web
                             applications. Problem-solving is my strength, and I always enjoy learning new technologies
@@ -390,7 +397,6 @@
                 </form>
             </div>
         </section>
-        <!-- ...existing code... -->
 
 <!-- Portfolio QR Code Section: Footer-এর ঠিক আগে বসান -->
 <section id="portfolio-qr" style="text-align:center; margin: 40px 0;">
@@ -404,7 +410,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
   // আপনার live portfolio URL দিন
-  var portfolioLink = "https://yourdomain.com"; // <-- এখানে আপনার live URL দিন
+  var portfolioLink = "https://mohanlalmanna24.github.io/portfolio/"; // <-- এখানে আপনার live URL 
 
   document.getElementById('showQRBtn').onclick = function() {
     var qrDiv = document.getElementById("qrcode");
@@ -422,7 +428,6 @@
     this.style.display = "none";
   };
 </script>
-<!-- ...existing code... -->
     </main>
     
     <footer class="footer">
@@ -470,17 +475,7 @@
     </footer>
     <script src="./script_file/cursorEffect_script.js"></script> <!-- This script handles the cursor effect -->
     <script src="./script_file/script.js"></script>
-    <!-- Vanilla Tilt JS for 3D tilt effect -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script> -->
-    <!-- <script>
-        VanillaTilt.init(document.querySelector("#mohan_img img"), {
-            max: 18,
-            speed: 400,
-            glare: true,
-            "max-glare": 0.25,
-            scale: 1.06,
-        }); -->
-    </script>
+ 
     
 </body>
 
