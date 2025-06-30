@@ -8,21 +8,16 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="./style_file/style.css">
     <link rel="stylesheet" href="./style_file/cursorEffect_Style.css">
-
+    <link rel="icon" href="./images/mmmm.png" type="image/x-icon">
     <title>Portfolio</title>
 </head>
 
 <body>
     <!-- Preloader -->
-    <!-- <div id="preloader">
-        <div class="dot-loader">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div> -->
+    <div id="preloader">
+   <video width="100%" height="100%" autoplay muted id="preloader-video">
+            <source src="./video/intro Video.mp4" type="video/mp4">
+        </video>    </div>
     <nav>
         <div class="nav-container">
             <div class="nav-left">
@@ -49,7 +44,7 @@
     </nav>
 
     <main>
-        <div id="home">
+        <div id="home" class="hidden-home">
             <div id="star-cursor"></div>
             <div class="text">
                 <span class="hi">Hi,</span><br>
@@ -476,7 +471,8 @@
     <script src="./script_file/cursorEffect_script.js"></script> <!-- This script handles the cursor effect -->
     <script src="./script_file/script.js"></script>
  
-    
+     
+
 </body>
 
 </html>

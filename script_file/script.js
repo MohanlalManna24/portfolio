@@ -1,17 +1,33 @@
-// ...existing code...
 
-// Hide preloader when page fully loaded (10 seconds)
-window.addEventListener("load", function () {
+// Preloader video fade-out and home fade-in
+window.addEventListener("DOMContentLoaded", function () {
   const preloader = document.getElementById("preloader");
-  if (preloader) {
+  const video = document.getElementById("preloader-video");
+  const home = document.getElementById("home");
+
+  if (video && preloader && home) {
+    video.onended = function () {
+      preloader.classList.add("hide");
+      setTimeout(() => {
+        preloader.style.display = "none";
+        home.classList.remove("hidden-home");
+        home.classList.add("show-home");
+      }, 1000); // 1s fade-out
+    };
+    // Fallback: if preloader video is too longer than stop the video after 6 seconds
     setTimeout(() => {
-      preloader.style.opacity = "0";
-      setTimeout(() => (preloader.style.display = "none"), 500); // opacity transition
-    }, 3000); // 3 seconds
+      if (preloader.style.display !== "none") {
+        preloader.classList.add("hide");
+        setTimeout(() => {
+          preloader.style.display = "none";
+          home.classList.remove("hidden-home");
+          home.classList.add("show-home");
+        }, 1000);
+      }
+    }, 6000);
   }
 });
 
-// ...existing code...
 // Infinity typing effect for multiple phrases
 const phrases = [
   "I'm a Frontend developer",

@@ -10,52 +10,32 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
-/* Preloader Styles */
-/* Dot Bouncing Preloader */
+/* Preloader fade-out */
 #preloader {
   position: fixed;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(135deg, rgb(255, 255, 255), rgb(239, 212, 171));
   z-index: 99999;
+  background: #fff;
+  top: 0; left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.5s;
+  transition: opacity 1s;
 }
-.dot-loader {
-  display: flex;
-  gap: 10px;
-}
-.dot-loader div {
-  width: 18px;
-  height: 18px;
-  background: #0072ff;
-  border-radius: 50%;
-  animation: bounce 0.7s infinite alternate;
-}
-.dot-loader div:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.dot-loader div:nth-child(3) {
-  animation-delay: 0.4s;
-}
-.dot-loader div:nth-child(4) {
-  animation-delay: 0.6s;
-}
-.dot-loader div:nth-child(5) {
-  animation-delay: 0.8s;
+#preloader.hide {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s;
 }
 
-@keyframes bounce {
-  to {
-    transform: translateY(-50px);
-    background: #00c6ff;
-  }
+/* Home section fade-in */
+.hidden-home {
+  opacity: 0;
+  transition: opacity 1.2s;
 }
-
+.show-home {
+  opacity: 1;
+  transition: opacity 1.2s;
+}
 /* ========== Body & Hero Section Background ========== */
 body #home {
   position: relative;
@@ -773,6 +753,120 @@ pre {
 .fab-actions button {
   border: none;
 }
+
+/*=========== ============ ========== ========== Home page styles responsive =========== ============ ============= ============== */
+/* Responsive styles for #home section */
+@media (max-width: 1100px) {
+  #home {
+    min-height: 80vh;
+    padding-bottom: 40px;
+  }
+  #mohan_img {
+    position: static;
+    margin: 30px auto 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+  #mohan_img img {
+    width: 220px;
+  }
+  .bgLogo {
+    width: 350px;
+    top: 20px;
+  }
+  .text {
+    top: 60px;
+    font-size: 18px;
+  }
+  .text .hi {
+    font-size: 40px;
+    margin-left: 40px;
+  }
+  .text .name-text {
+    margin-left: 80px;
+    font-size: 28px;
+  }
+  .text .name-text .mohan_name {
+    font-size: 36px;
+  }
+  .animated-text #typing-effect {
+    font-size: 22px;
+    margin-left: 30px;
+  }
+  .text p,
+  pre {
+    margin-left: 20px;
+    font-size: 16px;
+  }
+  .btn {
+    margin-left: 0;
+    gap: 14px;
+    justify-content: center;
+  }
+  .wrapper {
+    margin-left: 80px;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 900px) {
+  #home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 80vh;
+    padding-bottom: 40px;
+  }
+  #mohan_img {
+    order: 1;
+    position: static;
+    margin: 30px auto 0 auto;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .text {
+    order: 2;
+    width: 100%;
+    top: 0;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+}
+
+/* For extra small screens */
+@media (max-width: 700px) {
+  #home {
+    min-height: 70vh;
+    padding-bottom: 30px;
+  }
+  #mohan_img img {
+    width: 120px;
+  }
+  .bgLogo {
+    width: 120px;
+    top: 20px;
+  }
+  .text {
+    font-size: 10px;
+    margin-top: 8px;
+  }
+  .animated-text #typing-effect {
+    font-size: 16px;
+    margin-left: 10px;
+  }
+  .text .name-text .mohan_name {
+    font-size: 25px;
+  }
+  .share-fab {
+    margin-top: 15px;
+    margin-right: 15px;
+  }
+  .wrapper .button:hover {
+  width: 50px;
+}
+}
 /*=========== ============ ========== ========== About page styles =========== ============ ============= ============== */
 
 body #about {
@@ -907,6 +1001,124 @@ body #about {
 .sub-marquee-box p {
   padding: 10px;
   font-size: x-large;
+}
+/*=========== ============ ========== ========== About page styles responsive =========== ============ ============= ============== */
+/* Mobile view: Hide about left-container and make right-container full width */
+@media (max-width: 700px) {
+  #about .container {
+    flex-direction: column;
+    padding: 10px 0;
+    gap: 0;
+  }
+  #about .left-container {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  #about .right-container {
+    width: 100% !important;
+    max-width: 100vw !important;
+    padding: 0 6vw !important;
+  }
+  #about .right-container .about-title {
+    font-size: 1.3rem;
+    margin-top: 20px;
+    margin-left: 0;
+    transform: none;
+    padding: 0 22vw;
+  }
+  #about .right-container .about-me p {
+    font-size: 0.98rem;
+    padding: 0 0.01vw;
+    margin-top: 0;
+    text-align: center;
+  }
+  /* Mobile view: about section table padding & font fix */
+  @media (max-width: 700px) {
+    .right-container .about-me table {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .right-container .about-me table tr {
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .right-container .about-me table tr td {
+      min-width: 80px;
+      font-size: 0.95rem;
+      padding: 8px 12px !important;
+      border-radius: 30px;
+      word-break: break-word;
+      white-space: nowrap;
+    }
+  }
+  #about .right-container .about-me .moving {
+    padding: 10px 0;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    gap: 10px;
+  }
+  .right-container .about-me .moving .box {
+    width: 90vw;
+    max-width: 220px;
+    min-width: 80px;
+    font-size: 1rem;
+    padding: 10px 8px;
+  }
+}
+
+/* Mobile view: moving box গুলো এক লাইনে ও ছোট ফন্টে */
+@media (max-width: 700px) {
+  #about .right-container .about-me .moving {
+    padding: 10px 0;
+    flex-direction: row; /* এক লাইনে */
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    gap: 8px;
+  }
+  .right-container .about-me .moving .box {
+    width: auto;
+    min-width: 70px;
+    max-width: 120px;
+    font-size: 0.85rem; /* ছোট ফন্ট */
+    padding: 8px 4px;
+  }
+  .right-container .about-me .moving .box span {
+    font-size: 18px; /* সংখ্যা ও টেক্সট ছোট */
+  }
+}
+
+/* Mobile view: about section table padding & font fix */
+@media (max-width: 700px) {
+  .right-container .about-me table tr td {
+    width: auto;
+    min-width: 60px;
+    font-size: 0.85rem;
+    padding: 4px 8px !important; /* ঠিকঠাক padding */
+    border-radius: 30px;
+  }
+}
+
+/* Ensure .marquee-box starts just after about section */
+#about + .marquee-box {
+  margin-top: 0;
+  margin-bottom: 30px;
+  position: relative;
+  top: 0;
+}
+
+/* Responsive: reduce margin for mobile */
+@media (max-width: 700px) {
+  #about + .marquee-box {
+    margin-top: 0px;
+    margin-bottom: 16px;
+  }
 }
 /*=========== ============ ========== ========== Skile page styles =========== ============ ============= ============== */
 #skill {
@@ -1113,6 +1325,113 @@ body #about {
   opacity: 1;
   transform: rotateY(0deg);
 }
+
+/*=========== ============ ========== ========== skill and project page styles responsive =========== ============ ============= ============== */
+
+/* Tablet & Mobile: Section spacing and responsive design */
+@media (max-width: 900px) {
+  #skill,
+  #projects {
+    margin-top: 28px;
+    margin-bottom: 28px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    padding: 0 4vw;
+  }
+  .skill-card {
+    min-width: 0;
+    margin: 0;
+    padding: 14px 8px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+  }
+  #projects .all-project {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 18px;
+    padding: 0 4vw;
+  }
+  .project-container {
+    margin: 0;
+    border-radius: 12px;
+    min-height: 340px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  }
+}
+
+@media (max-width: 600px) {
+  #skill,
+  #projects {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .skills-title,
+  .project-title {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 2vw;
+  }
+  .skill-card {
+    width: 100%;
+    margin: 0;
+    padding: 10px 6px;
+    border-radius: 10px;
+    font-size: 0.98rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  }
+  #projects .all-project {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 50px;
+    padding: 0 8vw;
+  }
+  .project-container {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    border-radius: 12px;
+    min-height: 280px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  .project-image img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+  .project-name {
+    font-size: 1.08rem;
+    margin-top: 8px;
+    padding: 4px 0;
+  }
+  .project-container p {
+    font-size: 0.97rem;
+    padding: 8px 8px 0 8px;
+  }
+  .project-container button {
+    width: 90%;
+    left: 5%;
+    font-size: 1rem;
+    height: 36px;
+    position: static;
+    margin: 10px auto 10px auto;
+    display: block;
+  }
+}
 /*=========== ============ ========== ========== marquee effect  =========== ============ ============= ============== */
 .box2 {
   background: #0072ff;
@@ -1291,397 +1610,8 @@ body #contact {
   opacity: 1;
   transform: translateX(0) rotate(0deg);
 }
-/*=========== ============ ========== ========== Footer page styles =========== ============ ============= ============== */
-.footer {
-  width: 100%;
-  height: 250px;
-  background: linear-gradient(135deg, #464646, #101010);
-  color: #f7f6f6;
-  padding: 20px;
-}
-.footer-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0px;
-  justify-items: center;
-}
-.footer-container .footer-part1 {
-  display: flex;
-  flex-direction: column;
-}
-.footer-container .footer-part1 a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
-  padding-left: 40px;
-  padding-bottom: 5px;
-  transition: all 0.08s linear;
-}
-.footer-container .footer-part1 a:hover {
-  transform: scale(0.8);
-  color: rgb(169, 205, 50);
-}
-.footer-container .footer-wrapper {
-  display: flex;
-  gap: 15px;
-  margin: 10px;
-}
+/*=========== ============ ========== ========== contact page styles responsive =========== ============ ============= ============== */
 
-.footer-wrapper .button .icon i {
-  color: #fff;
-  transform: scale(1.2);
-  transition: all 0.1s linear;
-}
-.footer-wrapper .button .icon i:hover {
-  transform: scale(1.5);
-  color: greenyellow;
-}
-.footer-container h2,
-h3 {
-  color: rgb(160, 158, 158);
-}
-.footer-container .footer-name {
-  position: relative;
-  top: 20px;
-  left: calc(50% + 250px);
-}
-/*=========== ============ ========== ========== Home page styles responsive =========== ============ ============= ============== */
-/* Responsive styles for #home section */
-@media (max-width: 1100px) {
-  #home {
-    min-height: 80vh;
-    padding-bottom: 40px;
-  }
-  #mohan_img {
-    position: static;
-    margin: 30px auto 0 auto;
-    display: flex;
-    justify-content: center;
-  }
-  #mohan_img img {
-    width: 220px;
-  }
-  .bgLogo {
-    width: 350px;
-    top: 20px;
-  }
-  .text {
-    top: 60px;
-    font-size: 18px;
-  }
-  .text .hi {
-    font-size: 40px;
-    margin-left: 40px;
-  }
-  .text .name-text {
-    margin-left: 80px;
-    font-size: 28px;
-  }
-  .text .name-text .mohan_name {
-    font-size: 36px;
-  }
-  .animated-text #typing-effect {
-    font-size: 22px;
-    margin-left: 30px;
-  }
-  .text p,
-  pre {
-    margin-left: 20px;
-    font-size: 16px;
-  }
-  .btn {
-    margin-left: 0;
-    gap: 14px;
-    justify-content: center;
-  }
-  .wrapper {
-    margin-left: 80px;
-    margin-top: 30px;
-  }
-}
-
-@media (max-width: 900px) {
-  #home {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 80vh;
-    padding-bottom: 40px;
-  }
-  #mohan_img {
-    order: 1;
-    position: static;
-    margin: 30px auto 0 auto;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-  .text {
-    order: 2;
-    width: 100%;
-    top: 0;
-    font-size: 18px;
-    margin-top: 10px;
-  }
-}
-
-/* For extra small screens */
-@media (max-width: 700px) {
-  #home {
-    min-height: 70vh;
-    padding-bottom: 30px;
-  }
-  #mohan_img img {
-    width: 120px;
-  }
-  .bgLogo {
-    width: 120px;
-    top: 20px;
-  }
-  .text {
-    font-size: 10px;
-    margin-top: 8px;
-  }
-  .animated-text #typing-effect {
-    font-size: 16px;
-    margin-left: 10px;
-  }
-  .text .name-text .mohan_name {
-    font-size: 25px;
-  }
-  .share-fab {
-    margin-top: 15px;
-    margin-right: 15px;
-  }
-  .wrapper .button:hover {
-  width: 50px;
-}
-}
-
-/*=========== ============ ========== ========== About page styles responsive =========== ============ ============= ============== */
-/* Mobile view: Hide about left-container and make right-container full width */
-@media (max-width: 700px) {
-  #about .container {
-    flex-direction: column;
-    padding: 10px 0;
-    gap: 0;
-  }
-  #about .left-container {
-    display: none !important;
-    width: 0 !important;
-    height: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-  #about .right-container {
-    width: 100% !important;
-    max-width: 100vw !important;
-    padding: 0 6vw !important;
-  }
-  #about .right-container .about-title {
-    font-size: 1.3rem;
-    margin-top: 20px;
-    margin-left: 0;
-    transform: none;
-    padding: 0 22vw;
-  }
-  #about .right-container .about-me p {
-    font-size: 0.98rem;
-    padding: 0 0.01vw;
-    margin-top: 0;
-    text-align: center;
-  }
-  /* Mobile view: about section table padding & font fix */
-  @media (max-width: 700px) {
-    .right-container .about-me table {
-      display: block;
-      width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-    .right-container .about-me table tr {
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .right-container .about-me table tr td {
-      min-width: 80px;
-      font-size: 0.95rem;
-      padding: 8px 12px !important;
-      border-radius: 30px;
-      word-break: break-word;
-      white-space: nowrap;
-    }
-  }
-  #about .right-container .about-me .moving {
-    padding: 10px 0;
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-    gap: 10px;
-  }
-  .right-container .about-me .moving .box {
-    width: 90vw;
-    max-width: 220px;
-    min-width: 80px;
-    font-size: 1rem;
-    padding: 10px 8px;
-  }
-}
-
-/* Mobile view: moving box গুলো এক লাইনে ও ছোট ফন্টে */
-@media (max-width: 700px) {
-  #about .right-container .about-me .moving {
-    padding: 10px 0;
-    flex-direction: row; /* এক লাইনে */
-    align-items: center;
-    justify-content: center;
-    height: auto;
-    gap: 8px;
-  }
-  .right-container .about-me .moving .box {
-    width: auto;
-    min-width: 70px;
-    max-width: 120px;
-    font-size: 0.85rem; /* ছোট ফন্ট */
-    padding: 8px 4px;
-  }
-  .right-container .about-me .moving .box span {
-    font-size: 18px; /* সংখ্যা ও টেক্সট ছোট */
-  }
-}
-
-/* Mobile view: about section table padding & font fix */
-@media (max-width: 700px) {
-  .right-container .about-me table tr td {
-    width: auto;
-    min-width: 60px;
-    font-size: 0.85rem;
-    padding: 4px 8px !important; /* ঠিকঠাক padding */
-    border-radius: 30px;
-  }
-}
-
-/* Ensure .marquee-box starts just after about section */
-#about + .marquee-box {
-  margin-top: 0;
-  margin-bottom: 30px;
-  position: relative;
-  top: 0;
-}
-
-/* Responsive: reduce margin for mobile */
-@media (max-width: 700px) {
-  #about + .marquee-box {
-    margin-top: 0px;
-    margin-bottom: 16px;
-  }
-}
-
-/* Tablet & Mobile: Section spacing and responsive design */
-@media (max-width: 900px) {
-  #skill,
-  #projects {
-    margin-top: 28px;
-    margin-bottom: 28px;
-    padding-top: 18px;
-    padding-bottom: 18px;
-  }
-  .skills-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-    padding: 0 4vw;
-  }
-  .skill-card {
-    min-width: 0;
-    margin: 0;
-    padding: 14px 8px;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
-  }
-  #projects .all-project {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-    margin-top: 18px;
-    padding: 0 4vw;
-  }
-  .project-container {
-    margin: 0;
-    border-radius: 12px;
-    min-height: 340px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  }
-}
-
-@media (max-width: 600px) {
-  #skill,
-  #projects {
-    margin-top: 16px;
-    margin-bottom: 16px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-  .skills-title,
-  .project-title {
-    font-size: 1.3rem;
-    text-align: center;
-    margin-bottom: 12px;
-  }
-  .skills-container {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding: 0 2vw;
-  }
-  .skill-card {
-    width: 100%;
-    margin: 0;
-    padding: 10px 6px;
-    border-radius: 10px;
-    font-size: 0.98rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
-  }
-  #projects .all-project {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin-top: 50px;
-    padding: 0 8vw;
-  }
-  .project-container {
-    width: 100%;
-    height: auto;
-    margin: auto;
-    border-radius: 12px;
-    min-height: 280px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  .project-image img {
-    width: 100%;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
-  }
-  .project-name {
-    font-size: 1.08rem;
-    margin-top: 8px;
-    padding: 4px 0;
-  }
-  .project-container p {
-    font-size: 0.97rem;
-    padding: 8px 8px 0 8px;
-  }
-  .project-container button {
-    width: 90%;
-    left: 5%;
-    font-size: 1rem;
-    height: 36px;
-    position: static;
-    margin: 10px auto 10px auto;
-    display: block;
-  }
-}
 /* Contact section responsive styles for tab and mobile only */
 @media (max-width: 900px) {
   #contact {
@@ -1861,6 +1791,66 @@ h3 {
     margin-top: 100px;
   }
 }
+/*=========== ============ ========== ========== Footer page styles =========== ============ ============= ============== */
+.footer {
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(135deg, #464646, #101010);
+  color: #f7f6f6;
+  padding: 20px;
+}
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0px;
+  justify-items: center;
+}
+.footer-container .footer-part1 {
+  display: flex;
+  flex-direction: column;
+}
+.footer-container .footer-part1 a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding-left: 40px;
+  padding-bottom: 5px;
+  transition: all 0.08s linear;
+}
+.footer-container .footer-part1 a:hover {
+  transform: scale(0.8);
+  color: rgb(169, 205, 50);
+}
+.footer-container .footer-wrapper {
+  display: flex;
+  gap: 15px;
+  margin: 10px;
+}
+
+.footer-wrapper .button .icon i {
+  color: #fff;
+  transform: scale(1.2);
+  transition: all 0.1s linear;
+}
+.footer-wrapper .button .icon i:hover {
+  transform: scale(1.5);
+  color: greenyellow;
+}
+.footer-container h2,
+h3 {
+  color: rgb(160, 158, 158);
+}
+.footer-container .footer-name {
+  position: relative;
+  top: 20px;
+  left: calc(50% + 250px);
+}
+
+
+
+
+
+/*=========== ============ ========== ========== footer page styles responsive =========== ============ ============= ============== */
 
 /* Footer responsive styles */
 @media (max-width: 900px) {
