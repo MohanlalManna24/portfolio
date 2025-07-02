@@ -97,7 +97,7 @@
                     </div>
                 </div>
             </div>
-            <div id="mohan_img">
+            <div id="mohan_img"  oncontextmenu="return false;">
                 <img src="./images/photo2.jpg" alt="">
 
             </div>
@@ -294,16 +294,16 @@
 
             <h2 class="project-title">Latest Projects</h2>
 
-            <div class="all-project">
+            <div class="all-project"  oncontextmenu="return false;">
                 <div class="project-container box">
                     <div class="box-border"></div>
-                    <div class="project-image"><img src="./project-image/RUNNING.jpg" alt="running poster"></div>
+                    <div class="project-image"><img src="./project-image/photoshop/RUNNING.jpg" alt="running poster"></div>
                     <div class="project-name">Graphics Design</div>
                     <p>Professional designs for posters, banners, and digital ads- combining color, typography, and
                         layout to elevate brand identity.
                         Creative visual concepts developed using <b>Photoshop, canva</b> and many more ..
                     </p>
-                    <button>Get more →</button>
+                    <button onclick=" openProject('photoshop')">Get more →</button>
                 </div>
                 <div class="project-container box">
                     <div class="box-border"></div>
@@ -312,7 +312,7 @@
                     <p>Created a dynamic and well-structured <b>Excle spreadsheet</b> for data analysis and reporting.
                         The
                         project includes functions, chartes, conditional formatting and automated calculations.</p>
-                    <button>Get more →</button>
+                    <button onclick="openProject('Excel')">Get more →</button>
                 </div>
                 <div class="project-container box">
                     <div class="box-border"></div>
@@ -321,16 +321,16 @@
                     <p>Designed and developer a responsive website layout only <b>HTML, CSS & JavaScript.</b> The
                         project
                         features a clean navigation grid-based section, and smooth design suitable for screen sizes.</p>
-                    <button>Get more →</button>
+                    <button onclick="openProject('web-project')">Get more →</button>
                 </div>
                 <div class="project-container box">
                     <div class="box-border"></div>
-                    <div class="project-image"><img src="./project-image/Logo.jpg" alt="Coreldraw image"></div>
+                    <div class="project-image"><img src="./project-image/coreldraw/rose.jpg" alt="Coreldraw image"></div>
                     <div class="project-name">CorelDRAW</div>
                     <p>A vector-based design created using <b>Coreldraw</b>, suitable for high-resolution printing and
                         scalable
                         without loss of quality.</p>
-                    <button>Get more →</button>
+                    <button onclick="openProject('coreldraw')">Get more →</button>
                 </div>
                 <div class="project-container box">
                     <div class="box-border"></div>
@@ -340,7 +340,7 @@
                         content,
                         visual consistency, and smooth transitions. Ideal for business metting, academic presentation
                     </p>
-                    <button>Get more →</button>
+                    <button onclick="openProject('ppt')">Get more →</button>
                 </div>
 
             </div>
@@ -370,7 +370,7 @@
                 </p>
                 <button title="WhatsApp me" id="whatsApp">Scan To
                     MASSAGE</button>
-                <div class="qrcode"><img src="./images/whatsapp QR.png" alt="WhatsApp QR code"></div>
+                <div class="qrcode"  oncontextmenu="return false;"><img src="./images/whatsapp QR.png" alt="WhatsApp QR code"></div>
             </div>
             <div class="contact-right box">
                 <h2>Drop a Message</h2>
@@ -394,7 +394,7 @@
         </section>
 
 <!-- Portfolio QR Code Section: Footer-এর ঠিক আগে বসান -->
-<section id="portfolio-qr" style="text-align:center; margin: 40px 0;">
+<section id="portfolio-qr" oncontextmenu="return false;" style="text-align:center; margin: 40px 0;">
     <h2 style="margin-bottom:16px;">Scan to Visit My Portfolio</h2>
     <button id="showQRBtn" style="padding:10px 24px; border-radius:6px; background:#1e3c72; color:#fff; border:none; font-size:1em; cursor:pointer;">Show QR Code</button>
     <div id="qrcode" style="display:none; margin-top:20px;"></div>

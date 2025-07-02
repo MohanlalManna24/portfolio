@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOHANLAL</title>
+    <link rel="icon" href="./images/mmmm.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<style>
+    body {
+        background-color: #f0feff;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .backBtn {
+        background: greenyellow;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+    }
+
+    .backBtn:hover {
+        background: linear-gradient(to right, #ff7e5f, #feb47b);
+        color: white;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),
+            -5px -5px 10px rgba(255, 255, 255, 0.8);
+        transform: scale(1.1);
+    }
+
+    .backBtn i {
+        font-size: 40px;
+    }
+
+    .photoshop,
+    .coreldraw {
+        display: flex;
+        justify-content: center;
+        /* align-items: center; */
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .photoshop .cloumn1,
+    .photoshop .column2,
+    .photoshop .column3 {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .coreldraw .column1,
+    .coreldraw .column2,
+    .coreldraw .column3 {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .photoshop img,
+    .coreldraw img {
+        width: 25vw;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    /* Modal styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal img {
+        max-width: 90vw;
+        max-height: 90vh;
+        border-radius: 10px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+    }
+
+    .modal.active {
+        display: flex;
+    }
+
+    .hidden {
+        display: none !important;
+    }
+</style>
+
+<body>
+    <button class="backBtn" onclick="window.location.href='index.html#projects'" title="Back to Home">
+        <i class="fa-solid fa-arrow-left"></i> </button>
+    <section id="photoshop">
+        <span class="photoshop">
+            <div class="cloumn1">
+                <img src="./project-image/photoshop/RUNNING.jpg" alt="running poster">
+                <img src="./project-image/photoshop/Debit card.png" alt="dabit card">
+                <img src="./project-image/photoshop/Debit card.png" alt="dabit card">
+            </div>
+            <div class="column2">
+                <img src="./project-image/photoshop/Rath Yatra Festival Greeting Post.jpg" alt="rath yatra">
+                <img src="./project-image/photoshop/save earth.jpg" alt="save earth poster">
+                <img src="./project-image/photoshop/save earth.jpg" alt="save earth poster">
+            </div>
+            <div class="column3">
+                <img src="./project-image/photoshop/Modern Headphone.png" alt="Headphone poster">
+                <img src="./project-image/photoshop/Modern Headphone.png" alt="Headphone poster">
+                <img src="./project-image/photoshop/Modern Headphone.png" alt="Headphone poster">
+
+            </div>
+        </span>
+        <div class="modal" id="imgModal">
+            <img src="" alt="Full Image" id="modalImg">
+        </div>
+    </section>
+    <section id="coreldraw">
+        <span class="coreldraw">
+            <div class="column1">
+                <img src="./project-image/coreldraw/eagol painting.jpg" alt="eagol">
+                <img src="./project-image/coreldraw/bird.jpg" alt="bird">
+                <img src="./project-image/coreldraw/Fairy1.jpg" alt="Fairy1">
+                <img src="./project-image/coreldraw/rose.jpg" alt="rose">
+            </div>
+            <div class="column2">
+                <img src="./project-image/coreldraw/Logo.jpg" alt="logo">
+                <img src="./project-image/coreldraw/3d.jpg" alt="3d">
+                <img src="./project-image/coreldraw/Fairy2.jpg" alt="Fairy2">
+                <img src="./project-image/coreldraw/tri-angle.jpg" alt="tri-angle">
+
+            </div>
+            <div class="column3">
+                <img src="./project-image/coreldraw/Fairy3.jpg" alt="Fairy3">
+                <img src="./project-image/coreldraw/Mohanlal logo.png" alt="Mohanlal logo">
+                <img src="./project-image/coreldraw/eagol draw.jpg" alt="eagol draw">
+                <img src="./project-image/coreldraw" alt="">
+
+            </div>
+        </span>
+    </section>
+
+    <script>
+        // Disable right-click context menu on images
+        document.addEventListener('contextmenu', function (e) {
+            if (e.target.closest('img')) {
+                e.preventDefault();
+            }
+        });
+        document.querySelectorAll('img').forEach(img => {
+            img.loading = 'lazy';
+        });
+
+        // Modal functionality
+        const modal = document.getElementById('imgModal');
+        const modalImg = document.getElementById('modalImg');
+        document.querySelectorAll('.photoshop img').forEach(img => {
+            img.addEventListener('click', function () {
+                modalImg.src = this.src;
+                modalImg.alt = this.alt;
+                modal.classList.add('active');
+            });
+        });
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                modalImg.src = '';
+            }
+        });
+
+        // button click to open project page
+        const params = new URLSearchParams(window.location.search);
+        const projectId = params.get("project");
+
+        document.querySelectorAll("section").forEach(section => {
+            section.classList.add("hidden");
+        });
+
+        if (projectId) {
+            const activeSection = document.getElementById(projectId);
+            if (activeSection) {
+                activeSection.classList.remove("hidden");
+            }
+        }
+    </script>
+</body>
+
+</html>

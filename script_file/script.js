@@ -28,6 +28,7 @@ window.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+
 // Infinity typing effect for multiple phrases
 const phrases = [
   "I'm a Frontend developer",
@@ -188,3 +189,8 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     if (navToggle && navToggle.checked) navToggle.checked = false;
   });
 });
+
+// Open project page function
+   function openProject(projectId) {
+      window.location.href = `projects.html?project=${projectId}`;
+    }
