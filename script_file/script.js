@@ -1,33 +1,4 @@
 
-// Preloader video fade-out and home fade-in
-window.addEventListener("DOMContentLoaded", function () {
-  const preloader = document.getElementById("preloader");
-  const video = document.getElementById("preloader-video");
-  const home = document.getElementById("home");
-
-  if (video && preloader && home) {
-    video.onended = function () {
-      preloader.classList.add("hide");
-      setTimeout(() => {
-        preloader.style.display = "none";
-        home.classList.remove("hidden-home");
-        home.classList.add("show-home");
-      }, 1000); // 1s fade-out
-    };
-    // Fallback: if preloader video is too longer than stop the video after 6 seconds
-    setTimeout(() => {
-      if (preloader.style.display !== "none") {
-        preloader.classList.add("hide");
-        setTimeout(() => {
-          preloader.style.display = "none";
-          home.classList.remove("hidden-home");
-          home.classList.add("show-home");
-        }, 1000);
-      }
-    }, 6000);
-  }
-});
-
 
 // Infinity typing effect for multiple phrases
 const phrases = [

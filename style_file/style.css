@@ -10,32 +10,8 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
-/* Preloader fade-out */
-#preloader {
-  position: fixed;
-  z-index: 99999;
-  background: #fff;
-  top: 0; left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 1s;
-}
-#preloader.hide {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 1s;
-}
 
-/* Home section fade-in */
-.hidden-home {
-  opacity: 0;
-  transition: opacity 1.2s;
-}
-.show-home {
-  opacity: 1;
-  transition: opacity 1.2s;
-}
+
 /* ========== Body & Hero Section Background ========== */
 body #home {
   position: relative;
