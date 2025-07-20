@@ -135,3 +135,22 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
    function openProject(projectId) {
       window.location.href = `projects.html?project=${projectId}`;
     }
+
+    // আপনার live portfolio URL দিন
+  var portfolioLink = "https://mohanlalmanna24.github.io/portfolio/"; // <-- এখানে আপনার live URL 
+
+  document.getElementById('showQRBtn').onclick = function() {
+    var qrDiv = document.getElementById("qrcode");
+    if (qrDiv.innerHTML.trim() === "") {
+      new QRCode(qrDiv, {
+        text: portfolioLink,
+        width: 140,
+        height: 140,
+        colorDark : "#1e3c72",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+      });
+    }
+    qrDiv.style.display = "inline-block";
+    this.style.display = "none";
+  };
