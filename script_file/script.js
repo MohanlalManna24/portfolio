@@ -123,36 +123,6 @@ function checkBoxes() {
 window.addEventListener("scroll", checkBoxes);
 window.addEventListener("load", checkBoxes);
 
-//whatsApp Massage
-const contact_headings = document.querySelectorAll(".heading");
-const QRs = document.querySelectorAll(".qrcode");
-const whatsApp = document.getElementById("whatsApp");
-
-whatsApp.addEventListener("click", () => {
-  contact_headings.forEach((h) => {
-    h.style.opacity = "0";
-  });
-  QRs.forEach((q) => {
-    q.style.display = "block";
-    setTimeout(() => {
-      q.classList.add("visible");
-    }, 10);
-  });
-
-  // 10 second later, reset everything
-  setTimeout(() => {
-    contact_headings.forEach((h) => {
-      h.style.opacity = "1";
-    });
-    QRs.forEach((q) => {
-      q.classList.remove("visible");
-      setTimeout(() => {
-        q.style.display = "none";
-      }, 500); // wait for fade-out transition
-    });
-  }, 10000); // 10 seconds
-});
-
 // Close nav-menu on link click (for mobile)
 document.querySelectorAll('.nav-menu a').forEach(link => {
   link.addEventListener('click', () => {
