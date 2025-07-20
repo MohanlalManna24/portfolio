@@ -1203,16 +1203,6 @@ body #about {
     transform: translateX(0);
   }
 }
-@media (max-width: 900px) {
-  .skills-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 600px) {
-  .skills-container {
-    grid-template-columns: 1fr;
-  }
-}
 /*=========== ============ ========== ========== Project page styles =========== ============ ============= ============== */
 #projects {
   background: linear-gradient(120deg, #94b9ff, white, #b4cdfc);
@@ -1314,8 +1304,7 @@ body #about {
     padding-bottom: 18px;
   }
   .skills-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 18px;
     padding: 0 4vw;
   }
@@ -1355,10 +1344,9 @@ body #about {
     margin-bottom: 12px;
   }
   .skills-container {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
-    padding: 0 2vw;
+    padding: 0 3vw;
   }
   .skill-card {
     width: 100%;
