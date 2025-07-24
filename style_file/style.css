@@ -819,7 +819,7 @@ pre {
     width: 180px;
   }
   .bgLogo {
-    width: 120px;
+    width: 300px;
     top: 20px;
   }
   .text {
@@ -829,10 +829,11 @@ pre {
   .animated-text #typing-effect {
     font-size: 20px;
     margin-left: 10px;
+    font-weight: bold;
   }
 
   .text .name-text .mohan_name {
-    font-size: 27px;
+    font-size: 25px;
   }
   .wrapper{
    margin-left: 55px;
