@@ -2,11 +2,9 @@
 
 // Infinity typing effect for multiple phrases
 const phrases = [
-  "I'm a Frontend developer",
-  "I'm a Microshoft Office Expert",
-  "I'm a Web Designer",
-  "I'm a Data Entry Specialist",
-  "I'm a Mobile App Developer",
+  "I'm a Web Developer",
+  "I'm a MS Office Expert",
+  "I'm DataEntry Specialist",
   "I'm a Software Engineer",
 ];
 const typingTarget = document.getElementById("typing-effect");
